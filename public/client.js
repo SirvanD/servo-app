@@ -48,7 +48,7 @@ function createMarkers() {
       });
       // console.log(marker.label)
       const infowindow = new google.maps.InfoWindow({
-        content: `<h1 class="info-marker-title1">${station.name}</h1> <h4 class="info-marker-title2">${station.owner}</h4>`,
+        content: `<h6 class="info-marker-title1">${station.name}</h6> <h6 class="info-marker-title2">${station.owner}</h6>`,
       });
 
       const center = map.getCenter();
