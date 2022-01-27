@@ -2,7 +2,7 @@
   "name": "servo-app",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "dev": "nodemon server.js",
     "seed_db": "node ./scripts/seed_db.js"
@@ -22,8 +22,11 @@
     "nodemon": "^2.0.15"
   },
   "dependencies": {
+    "dotenv": "^14.3.2",
     "express": "^4.17.2",
     "fast-csv": "^4.3.6",
-    "pg": "^8.7.1"
+    "pg": "^8.7.1",
+    "webpack": "^5.67.0",
+    "webpack-cli": "^4.9.2"
   }
 }

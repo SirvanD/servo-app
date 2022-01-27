@@ -2,6 +2,18 @@
 
 // import { MarkerClusterer } from "@googlemaps/markerclusterer";
 
+// require('dotenv').config();
+
+// console.log(process.env)
+const API_KEY = 'AIzaSyDoLvv-SV4N-eu04xRdHzGPSctSoJKhtIA';
+console.log(API_KEY)
+
+var script = document.createElement('script');
+script.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}&callback=initMap`;
+script.async = true;
+
+document.head.appendChild(script);
+
 let map;
 const currentLat = document.querySelector(".current-lat");
 const currentLong = document.querySelector(".current-long");
@@ -16,12 +28,16 @@ function showLatLng(lat, lng) {
   currentLong.textContent = lng;
 }
 
-function initMap() {
+
+window.initMap = function(){
   map = new google.maps.Map(document.getElementById("map"), {
     zoom: 13,
     minZoom: 11,
     center: { lat: -25.363, lng: 131.044 },
   });
+
+
+  
   createMarkers();
   let pos = {};
   if (navigator.geolocation) {

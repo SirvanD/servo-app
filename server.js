@@ -1,7 +1,14 @@
 const express = require("express");
+
+require('dotenv').config();
+
+// console.log(process.env)
+var API_KEY = process.env.MAPS_API_KEY;
+console.log(API_KEY)
+
 const res = require("express/lib/response");
 const app = express();
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 
 const { Pool } = require("pg");
 
@@ -54,5 +61,5 @@ app.get("/api/stations/random", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log("server listening to 8080");
+  console.log(`server listening to ${PORT}`);
 });
