@@ -2,10 +2,12 @@
   "name": "servo-app",
   "version": "1.0.0",
   "description": "",
-  "private": true,
+  "main": "client.js",
   "scripts": {
     "dev": "nodemon server.js",
-    "seed_db": "node ./scripts/seed_db.js"
+    "seed_db": "node ./scripts/seed_db.js",
+    "build": "webpack build",
+    "webpack": "webpack serve"
   },
   "repository": {
     "type": "git",
@@ -19,14 +21,20 @@
   },
   "homepage": "https://github.com/aprilcanete/servo-app#readme",
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "axios": "^0.25.0",
+    "css-loader": "^6.5.1",
+    "html-webpack-plugin": "^5.5.0",
+    "nodemon": "^2.0.15",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.67.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.3",
+    "webpack-merge": "^5.8.0"
   },
   "dependencies": {
     "dotenv": "^14.3.2",
     "express": "^4.17.2",
     "fast-csv": "^4.3.6",
-    "pg": "^8.7.1",
-    "webpack": "^5.67.0",
-    "webpack-cli": "^4.9.2"
+    "pg": "^8.7.1"
   }
 }

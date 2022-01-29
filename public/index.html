@@ -13,9 +13,12 @@
       crossorigin="anonymous"
     />
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;300;500;700&display=swap');
-      </style>
-      <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false"></script>
+      @import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;300;500;700&display=swap");
+    </style>
+    <script
+      type="text/javascript"
+      src="https://maps.google.com/maps/api/js?sensor=false"
+    ></script>
   </head>
 
   <body>
@@ -30,7 +33,7 @@
     <div class="container-fluid main-container">
       <div class="row">
         <div
-          class="bg-light bg-gradient text-dark col-md-2 left-pane shadow-lg p-3  bg-body rounded p-3"
+          class="bg-light bg-gradient text-dark col-md-2 left-pane shadow-lg p-3 bg-body rounded p-3"
         >
           <div class="left-panel">
             <div class="row">
@@ -46,31 +49,28 @@
           <div class="row my-2">
             <h4 class="">Stats</h4>
 
-
             <table class="table table-striped table-hover table-bordered">
               <thead>
                 <tr>
                   <th scope="col">Total Stations</th>
-                  <th scope="col"><div class="tot-stations"></div></th>                  
+                  <th scope="col"><div class="tot-stations"></div></th>
                 </tr>
               </thead>
-              <tbody class="stats-table">         
-              </tbody>
+              <tbody class="stats-table"></tbody>
             </table>
-            
-            <h5 class="my-3 p-2">
-              Breakdown by Owners
-            </h5>
-            <table class="table table-striped table-hover table-bordered table-sm">
+
+            <h5 class="my-3 p-2">Breakdown by Owners</h5>
+            <table
+              class="table table-striped table-hover table-bordered table-sm"
+            >
               <thead>
                 <tr>
                   <th scope="col">Station Owner</th>
-                  <th scope="col">Numbers</th>                  
+                  <th scope="col">Numbers</th>
                 </tr>
               </thead>
-              <tbody class="owners-table">         
-              </tbody>
-            </table>            
+              <tbody class="owners-table"></tbody>
+            </table>
           </div>
         </div>
 
@@ -83,57 +83,60 @@
         </div>
 
         <div
-          class="bg-light bg-gradient text-dark col-md-2 right-panel shadow-lg p-3  bg-body rounded p-3"
+          class="bg-light bg-gradient text-dark col-md-2 right-panel shadow-lg p-3 bg-body rounded p-3"
         >
           <!-- Right Panel,items to be added -->
-          <h5 class="p-2">
-            Current location
-          </h5>
+          <h5 class="p-2">Current location</h5>
 
           <table class="table table-striped table-hover table-bordered">
             <thead>
               <tr>
                 <th scope="col">Latitude</th>
-                <th scope="col"><div class="current-lat"></div></th>                  
+                <th scope="col"><div class="current-lat"></div></th>
               </tr>
               <tr>
                 <th scope="col">Longitude</th>
-                <th scope="col"><div class="current-long"></div></th>                  
+                <th scope="col"><div class="current-long"></div></th>
               </tr>
               <tr>
                 <th scope="col">Address</th>
-                <th scope="col"><div class="current-address"></div></th>                  
+                <th scope="col"><div class="current-address"></div></th>
               </tr>
             </thead>
-            <tbody class="stats-table">         
-            </tbody>
+            <tbody class="stats-table"></tbody>
           </table>
           <div class="station-wrapper">
-            <h5 class="my-3 p-2">Your local Stations</h5>
+            <h5 class="my-1 p-2">Your local Stations</h5>
             <div class="station-detail"></div>
           </div>
-            <!-- Footer -->
-            <footer class="">
-
-              <!-- Copyright -->
-              <div class="footer-copyright text-center py-3">© By Sirvan Doukchi:
-                <a href="https://www.sirvan.dev">www.sirvan.dev</a>
-              </div>
-              <!-- Copyright -->
-
-            </footer>
-            <!-- Footer --> 
+          <!-- Footer -->
+          <footer class="">
+            <!-- Copyright -->
+            <div class="footer-copyright text-center">
+              © By Sirvan Doukchi:
+              <a href="https://www.sirvan.dev">www.sirvan.dev</a>
+            </div>
+            <!-- Copyright -->
+          </footer>
+          <!-- Footer -->
         </div>
       </div>
     </div>
 
+    <!-- <script type="module">
+      const { api } = require("../server");
+      // import { api } from "../server";
+
+      console.log(api);
+    </script> -->
     <!-- <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoLvv-SV4N-eu04xRdHzGPSctSoJKhtIA&callback=initMap"
       async
     ></script> -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="client.js"></script>
-    <script src="spotlight.js"></script>
-</body>
+    <script src="./client.js"></script>
+    <!-- <script src="./public/dist/bundle.js"></script> -->
 
+    <!-- <script src="./spotlight.js"></script> -->
+  </body>
 </html>

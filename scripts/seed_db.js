@@ -27,7 +27,7 @@ let csvStream = fastcsv
     });
 
     const query =
-      'INSERT INTO stations (id ,feature_type ,description ,class ,fid ,name ,operational_status ,owner ,industry_id ,address ,suburb ,state ,spatial_confidence ,revised ,comment ,latitude ,longitude) VALUES ($1, $2, $3, $4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16, $17)';
+      "INSERT INTO stations (id ,name ,owner ,address ,suburb ,state ,latitude ,longitude) VALUES ($1, $2, $3, $4,$5,$6,$7,$8)";
 
     pool.connect((err, client, done) => {
       if (err) throw err;

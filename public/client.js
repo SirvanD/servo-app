@@ -1,15 +1,9 @@
-// Initialize and add the map
+// const axios = require("axios");
+// import "./style.css";
+const Restricted_API_KEY = "AIzaSyAEUYDaRq1vV5EnIwKz3mOiathNkcTvYCY";
 
-// import { MarkerClusterer } from "@googlemaps/markerclusterer";
-
-// require('dotenv').config();
-
-// console.log(process.env)
-const API_KEY = 'AIzaSyDoLvv-SV4N-eu04xRdHzGPSctSoJKhtIA';
-console.log(API_KEY)
-
-var script = document.createElement('script');
-script.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}&callback=initMap`;
+var script = document.createElement("script");
+script.src = `https://maps.googleapis.com/maps/api/js?key=${Restricted_API_KEY}&callback=initMap`;
 script.async = true;
 
 document.head.appendChild(script);
@@ -28,16 +22,13 @@ function showLatLng(lat, lng) {
   currentLong.textContent = lng;
 }
 
-
-window.initMap = function(){
+window.initMap = function () {
   map = new google.maps.Map(document.getElementById("map"), {
     zoom: 13,
     minZoom: 11,
     center: { lat: -25.363, lng: 131.044 },
   });
 
-
-  
   createMarkers();
   let pos = {};
   if (navigator.geolocation) {
@@ -50,7 +41,7 @@ window.initMap = function(){
       map.setCenter(pos);
     });
   }
-}
+};
 
 function createMarkers() {
   axios.get("/api/stations/all").then((res) => {
@@ -168,3 +159,34 @@ const getCurrentLocationAddress = () => {
 };
 
 getCurrentLocationAddress();
+
+const spotlightOwner = document.querySelector(".spotlight-owner");
+const spotlightLinkName = document.querySelector(".spotlight-link-name");
+const spotlightBtn = document.querySelector(".spotlight-btn");
+
+const url = "http://localhost:8080/api/stations/random";
+var stationLocation = {};
+
+function updateSpotlight() {
+  axios.get(url).then((res) => {
+    console.log(res);
+    spotlightLinkName.textContent = res.data[0].name;
+    spotlightOwner.textContent = res.data[0].owner;
+    stationLocation.lat = res.data[0].latitude;
+    stationLocation.lng = res.data[0].longitude;
+    stationLocation.address = res.data[0].address;
+  });
+}
+
+updateSpotlight();
+
+spotlightBtn.addEventListener("click", updateSpotlight);
+
+function getServoLocation() {
+  console.log("updating spotlight");
+  showCurrentAddress(stationLocation.address);
+  showLatLng(stationLocation.lat, stationLocation.lng);
+  map.setCenter(stationLocation);
+}
+
+spotlightLinkName.addEventListener(`click`, getServoLocation);

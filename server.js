@@ -1,22 +1,14 @@
+// const axios = require("axios").default;
 const express = require("express");
-
-require('dotenv').config();
-
-// console.log(process.env)
-var API_KEY = process.env.MAPS_API_KEY;
-console.log(API_KEY)
-
 const res = require("express/lib/response");
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = 8080;
 
 const { Pool } = require("pg");
 
 const pool = new Pool({
   database: "servo_app_db",
 });
-
-app.use(express.static("public"));
 
 app.use(express.static("public"));
 
