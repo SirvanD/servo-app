@@ -1,6 +1,6 @@
 // const axios = require("axios");
 // import "./style.css";
-const Restricted_API_KEY = "AIzaSyAEUYDaRq1vV5EnIwKz3mOiathNkcTvYCY";
+const Restricted_API_KEY = "YOUR GOOGLE MAPS API KEY";
 
 var script = document.createElement("script");
 script.src = `https://maps.googleapis.com/maps/api/js?key=${Restricted_API_KEY}&callback=initMap`;
